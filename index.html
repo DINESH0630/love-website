@@ -9,37 +9,65 @@
 
 <body>
 
-    <div class="hearts"></div>
+<div class="floating-hearts"></div>
 
-    <div class="card">
+<div class="card">
 
-        <div id="questionScreen">
-            <div class="heart">❤️</div>
+    <!-- Cute cartoon -->
+    <div id="cartoon" class="cartoon">
+        <div class="ears">🐰</div>
+        <div class="face">🥺</div>
+        <div class="speech">Waiting for your answer... 💕</div>
+    </div>
 
-            <h1>Will you love me?</h1>
+    <div id="questionScreen">
 
-            <p id="message">
-                I have a very important question for you... 🥺
-            </p>
+        <div class="heart">❤️</div>
 
-            <div class="buttons">
-                <button id="yesBtn">Yes ❤️</button>
-                <button id="noBtn">No 😭</button>
-            </div>
-        </div>
+        <h1>Will you love me?</h1>
 
-        <div id="yesScreen" class="hidden">
-            <div class="big-heart">💖</div>
+        <p id="message">
+            I have a very important question for you... 🥺
+        </p>
 
-            <h1>YAY!!! 🥰</h1>
+        <div class="buttons">
 
-            <p>You just made my day! ❤️</p>
+            <button id="yesBtn">
+                Yes ❤️
+            </button>
 
-            <p>I am really happy! 💕</p>
+            <button id="noBtn">
+                No 😭
+            </button>
+
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+
+    <!-- YES SCREEN -->
+
+    <div id="yesScreen" class="hidden">
+
+        <div class="celebration">
+            💖 🥰 💕
+        </div>
+
+        <h1>YAY!!! 🎉</h1>
+
+        <p>You said YES! ❤️</p>
+
+        <p>That made this little bunny very happy! 🐰💕</p>
+
+        <div class="party">
+            🎈 💕 🎉 ❤️ 🎊 💖
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
