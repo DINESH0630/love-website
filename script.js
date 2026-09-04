@@ -1,7 +1,7 @@
-
 const yesBtn = document.getElementById("yesBtn");
-
 const noBtn = document.getElementById("noBtn");
+
+const message = document.getElementById("message");
 
 const questionScreen =
     document.getElementById("questionScreen");
@@ -9,42 +9,105 @@ const questionScreen =
 const yesScreen =
     document.getElementById("yesScreen");
 
-const message =
-    document.getElementById("message");
+const cartoon =
+    document.getElementById("cartoon");
 
-
-const noMessages = [
-
-    "Are you sure? 🥺",
-
-    "Really? 😭",
-
-    "My heart just did a tiny oof 💔",
-
-    "Okay... I respect your answer 😅",
-
-    "Maybe you will change your mind? ❤️"
-
-];
 
 let noCount = 0;
 
+const messages = [
 
-// When she clicks NO
+    "Are you sure? 🥺",
+
+    "Really? 😳",
+
+    "The bunny is still waiting... 🐰",
+
+    "Hmm... maybe think about it? 💕",
+
+    "The YES button is getting excited! 😂❤️",
+
+    "Okay okay... I'll wait patiently 🥺",
+
+    "One more thought? 🌸",
+
+    "No pressure — choose whatever feels right 😊"
+
+];
+
+
+const reactions = [
+
+    "🥺",
+
+    "😳",
+
+    "🐰",
+
+    "😭",
+
+    "😂",
+
+    "🥹",
+
+    "🌸",
+
+    "😊"
+
+];
+
+
+// NO BUTTON
+
 noBtn.addEventListener("click", function () {
 
-    message.textContent =
-        noMessages[noCount % noMessages.length];
-
     noCount++;
+
+    const index =
+        Math.min(noCount - 1, messages.length - 1);
+
+    message.textContent =
+        messages[index] + " " + reactions[index];
+
+
+    // Make YES grow gradually
+
+    const newScale =
+        Math.min(1 + noCount * 0.18, 2.5);
+
+    yesBtn.style.transform =
+        `scale(${newScale})`;
+
+
+    // Change bunny reaction
+
+    cartoon.querySelector(".face").textContent =
+        reactions[index];
+
+
+    // Little bounce
+
+    noBtn.animate(
+        [
+            { transform: "scale(1)" },
+            { transform: "scale(0.9)" },
+            { transform: "scale(1)" }
+        ],
+        {
+            duration: 300
+        }
+    );
 
 });
 
 
-// When she clicks YES
+// YES BUTTON
+
 yesBtn.addEventListener("click", function () {
 
     questionScreen.classList.add("hidden");
+
+    cartoon.classList.add("hidden");
 
     yesScreen.classList.remove("hidden");
 
@@ -53,22 +116,36 @@ yesBtn.addEventListener("click", function () {
 });
 
 
-// Create floating hearts
+// Floating hearts
+
 function createHearts() {
 
     const container =
-        document.querySelector(".hearts");
+        document.querySelector(".floating-hearts");
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 50; i++) {
 
         const heart =
             document.createElement("div");
 
-        heart.classList.add("floating-heart");
+        heart.className =
+            "floating-heart";
+
+        const emojis = [
+            "❤️",
+            "💕",
+            "💖",
+            "💗",
+            "💓",
+            "✨"
+        ];
 
         heart.textContent =
-            ["❤️", "💕", "💖", "💗", "💓"]
-            [Math.floor(Math.random() * 5)];
+            emojis[
+                Math.floor(
+                    Math.random() * emojis.length
+                )
+            ];
 
         heart.style.left =
             Math.random() * 100 + "%";
