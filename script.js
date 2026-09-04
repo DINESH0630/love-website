@@ -28,34 +28,38 @@ const messages = [
 
     "Hmm... maybe think about it? 💕",
 
-    "The YES button is getting excited! 😂❤️",
+    "The YES button is getting excited! 🙃",
 
     "Okay okay... I'll wait patiently 🥺",
 
-    "One more thought? 🌸",
+    "One more chance? 🌸",
 
-    "No pressure — choose whatever feels right 😊"
+    "No pressure — choose whatever feels right 🧡"
+
+    "l hope this time you press yes 🥹
 
 ];
 
 
 const reactions = [
 
+    "😗",
+
+    "🙂",
+
+    "😑",
+
+    "🥲",
+
+    "😞",
+
     "🥺",
-
-    "😳",
-
-    "🐰",
-
-    "😭",
-
-    "😂",
 
     "🥹",
 
-    "🌸",
+    "😢"
 
-    "😊"
+  "😭"
 
 ];
 
