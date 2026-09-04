@@ -1,3 +1,6 @@
+emailjs.init({
+  publicKey: "yKstecHf2rI8pC1j-"
+});
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
