@@ -1,6 +1,3 @@
-emailjs.init({
-  publicKey: "yKstecHf2rI8pC1j-"
-});
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
@@ -20,58 +17,57 @@ let noCount = 0;
 
 const messages = [
 
-    "Are you sure? 🥺",
+    "Are you sure? 🙃",
 
-    "Really? 😳",
+    "Really? 😒",
 
     "The bunny is still waiting... 🐰",
 
     "Hmm... maybe think about it? 💕",
 
-    "The YES button is getting excited! 🙃",
+    "The YES button is getting excited! 🧡",
 
     "Okay okay... I'll wait patiently 🥺",
 
-    "One more chance? 🌸",
+    "One more thought? 🌸",
 
-    "No pressure — choose whatever feels right 🧡"
+    "No pressure — choose whatever feels right 😭",
 
-    "l hope this time you press yes 🥹
+    "I hope this time you should accept 🥹",
+
+    "plz 😭"
 
 ];
 
 
 const reactions = [
 
+    "🙃",
+
     "😗",
-
-    "🙂",
-
-    "😑",
 
     "🥲",
 
-    "😞",
+    "😑",
+
+    "😮‍💨",
+
+    "😟",
+
+    "☹️",
 
     "🥺",
 
-    "🥹",
-
     "😢"
 
-  "😭"
+    "😭"
 
 ];
 
 
 // NO BUTTON
 
-let yesSize = 1;
-
 noBtn.addEventListener("click", function () {
-  yesSize += 0.2;
-  yesBtn.style.transform = `scale(${yesSize})`;
-});
 
     noCount++;
 
@@ -116,16 +112,7 @@ noBtn.addEventListener("click", function () {
 // YES BUTTON
 
 yesBtn.addEventListener("click", function () {
-emailjs.send(
-    "service_zw4vumi",
-    "template_z0n48cb",
-    {
-      message: "Someone clicked YES ❤️ on your website!"
-    }
-  );
 
-  // Keep all your existing code below this line
-});
     questionScreen.classList.add("hidden");
 
     cartoon.classList.add("hidden");
