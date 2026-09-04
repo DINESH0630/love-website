@@ -107,7 +107,16 @@ noBtn.addEventListener("click", function () {
 // YES BUTTON
 
 yesBtn.addEventListener("click", function () {
+emailjs.send(
+    "service_zw4vumi",
+    "template_z0n48cb",
+    {
+      message: "Someone clicked YES ❤️ on your website!"
+    }
+  );
 
+  // Keep all your existing code below this line
+});
     questionScreen.classList.add("hidden");
 
     cartoon.classList.add("hidden");
