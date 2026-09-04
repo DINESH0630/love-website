@@ -62,7 +62,12 @@ const reactions = [
 
 // NO BUTTON
 
+let yesSize = 1;
+
 noBtn.addEventListener("click", function () {
+  yesSize += 0.2;
+  yesBtn.style.transform = `scale(${yesSize})`;
+});
 
     noCount++;
 
