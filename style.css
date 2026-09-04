@@ -12,28 +12,71 @@ body {
 
     font-family: Arial, sans-serif;
 
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(
+        135deg,
+        #ff9a9e,
+        #fad0c4,
+        #ffd1dc
+    );
 
     overflow: hidden;
 }
 
 .card {
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
 
-    padding: 45px 25px;
+    padding: 35px 25px 45px;
 
     text-align: center;
 
-    background: white;
+    background: rgba(255,255,255,0.96);
 
-    border-radius: 25px;
+    border-radius: 30px;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.18);
 
     position: relative;
-    z-index: 2;
+    z-index: 5;
+
+    animation: cardAppear 1s ease;
 }
+
+
+/* Cute bunny */
+
+.cartoon {
+    margin-bottom: 10px;
+
+    animation: bunnyBounce 2s infinite;
+}
+
+.ears {
+    font-size: 50px;
+    line-height: 45px;
+}
+
+.face {
+    font-size: 75px;
+}
+
+.speech {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    background: #fff0f5;
+
+    border-radius: 20px;
+
+    color: #ff4f7b;
+
+    font-size: 15px;
+}
+
+
+/* Main heart */
 
 .heart {
     font-size: 75px;
@@ -44,7 +87,7 @@ body {
 h1 {
     color: #ff3b6b;
 
-    font-size: 38px;
+    font-size: 40px;
 
     margin: 15px 0;
 }
@@ -52,8 +95,11 @@ h1 {
 p {
     color: #555;
 
-    font-size: 18px;
+    font-size: 19px;
 }
+
+
+/* Buttons */
 
 .buttons {
     margin-top: 30px;
@@ -62,29 +108,35 @@ p {
 
     justify-content: center;
 
-    gap: 18px;
+    align-items: center;
+
+    gap: 20px;
 }
 
 button {
     border: none;
 
-    padding: 14px 28px;
+    padding: 15px 30px;
 
-    border-radius: 30px;
+    border-radius: 40px;
 
-    font-size: 18px;
+    font-size: 19px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 #yesBtn {
     background: #ff3b6b;
 
     color: white;
+
+    transform-origin: center;
 }
 
 #noBtn {
@@ -97,25 +149,51 @@ button:hover {
     transform: scale(1.08);
 }
 
+#yesBtn:hover {
+    box-shadow:
+        0 10px 25px rgba(255,59,107,0.35);
+}
+
+
+/* YES screen */
+
 .hidden {
     display: none;
 }
 
-.big-heart {
-    font-size: 100px;
+.celebration {
+    font-size: 70px;
 
-    animation: heartbeat 0.8s infinite;
+    animation: celebration 1s infinite;
 }
 
+.party {
+    font-size: 30px;
+
+    margin-top: 25px;
+
+    animation: party 1.5s infinite;
+}
+
+
+/* Floating hearts */
+
 .floating-heart {
-    position: absolute;
+    position: fixed;
 
     bottom: -50px;
 
+    pointer-events: none;
+
     font-size: 25px;
 
-    animation: floatUp 5s linear forwards;
+    animation: floatUp 6s linear forwards;
+
+    z-index: 1;
 }
+
+
+/* Animations */
 
 @keyframes heartbeat {
 
@@ -128,34 +206,94 @@ button:hover {
     }
 }
 
+@keyframes bunnyBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes celebration {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(5deg);
+    }
+}
+
+@keyframes party {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 @keyframes floatUp {
 
-    0% {
-        transform: translateY(0) rotate(0deg);
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
 
         opacity: 1;
     }
 
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
 
         opacity: 0;
     }
 }
 
+
+/* Phone */
+
 @media (max-width: 500px) {
+
+    .card {
+        padding: 25px 15px 35px;
+    }
 
     h1 {
         font-size: 30px;
     }
 
     .buttons {
-        flex-direction: column;
-
-        align-items: center;
+        gap: 12px;
     }
 
     button {
-        width: 180px;
+        padding: 13px 22px;
+        font-size: 17px;
+    }
+
+    .face {
+        font-size: 60px;
     }
 }
